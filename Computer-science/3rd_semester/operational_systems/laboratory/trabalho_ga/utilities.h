@@ -33,8 +33,8 @@ void show_menu(){
 }
 
 int get_option(){
-    int lv_return;
+    int rv_return;
     printf("\nOpção: ");
     scanf("%d", &lv_return);
-    return lv_return;
+    return rv_return;
 }
