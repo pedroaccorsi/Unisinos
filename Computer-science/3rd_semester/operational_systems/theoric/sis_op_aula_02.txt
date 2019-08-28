@@ -1,0 +1,32 @@
+multiprogramação -> ter vários processos
+chamada de sistema -> quando o processo solicita algum serviço do OS que acessa hardware (I/O)
+interrupção normal -> implementação em hardware ao final de um ciclo de I/O 
+o que ocorre quando uma interrupção é gerada -> o processador atende imediatamente a interrupção (raríssimas ocasiões muito específicas a interrupção é ignorada, mas bem raras, no geral ele atende a interrupção)
+pra ter multiprogramação, precisa-se de hardware que de suporte a isso
+
+Execução “simultânea” de vários programas -> embora tenha paralelismo hoje, também tem concorrência, ou seja, diferentes processos concorrendo pelo mesmo core.
+
+processo 
+    -> informações que tem em registrador, informações que tem em memória, todo o contexto... 
+    -> tem um bloco de controle, que mantém a alocação dinâmica de memória, onde o programa está sendo executado e em que posições de memória ele está sendo armazenado (uma vez que pode ser não contiguo)
+    -> INIT() é o processo pai de todos em linux
+
+
+processos CPU bound -> ciclo de processador é mto maior que o de I/o
+
+processos I/O bound -> ciclo de I/O é mto maior que o de processamento
+
+é uma informação interessante pra decidir a ordem de execução dos processos, o escalonamento.
+
+processos podem ser independentes ou dependentes entre si. por exemplo, se tu abrir dois terminais, cada um roda um progama, nenhum deles depende do outro, ou seja, eles são independentes entre si. Agora se tu roda um programa que chama outro e ao fim desse, volta pro primeiro, há uma relação de dependencia e hierarquia entre os processos.
+
+sempre que um processo é criado, o primeiro ciclo é do processador, always always
+
+processo pode ser suspenso em alguns casos. um exemplo é quando um processo tá na RAM, daí a memória acaba, e aí ele precisa ser "transferido" pra memória secundária (disco). No tempo que isso demora, o processo é deixado suspenso.
+
+estados do processo 
+    -> criação
+    -> aptos (prontos para usarem o processador)
+    -> execução 
+    -> bloqueados (esperando I/O)
+    -> suspensos 

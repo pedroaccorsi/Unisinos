@@ -1,0 +1,15 @@
+multiprogramação -> vários processos disputando o processador 
+
+processo
+    -> programa em execução
+    -> área na memória para código, dados e pilha
+
+memória
+    -> stack -> onde se está do processo, retorno de chamadas recursivas, etc
+    -> heap  -> alocação dinâmnica de memória (pode crescer, mas não infinitamente)
+    -> data  -> variáveis globais   
+    -> text  -> o código
+
+tudo isso que guarda as informações de processo se chama -> PCB: Process Control Block
+
+PC -> Program Counter -> aponta pra próxima instrução a ser executada 
