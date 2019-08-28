@@ -1,0 +1,62 @@
+7) Estude as diferen�as e compare o uso de um String Java e um string C. Apresente 1 exemplo.
+
+R: o que acontece é que em C, strings são, na verdade, um vetor de char, diferentemente de Java, onde são objetos, possuem métodos e etc.
+
+exemplo em C: char this_is_a_String[2] = {'o','i'};          //settando char por char
+exemplo em Java: String this_is_a_string = new String("Oi"); //instanciando um objeto e passando pro construtor um texto
+
+
+8) Estude as diferen�as e compare uma classe Java e uma struct C. Apresente 1 exemplo.
+
+R: estruturas em C são 'basicamente' classes que não possuem métodos. Em outras palavras, definimos uma objeto/estrutura que possui certas características/atributos. 
+
+Exemplo em C: 
+
+struct struct_type { //define a estrutura
+    int attribute_1
+    float attribute_2
+}; 
+
+struct_type this_is_a_struct; //declara a estrutura 
+this_is_a_struct.attribute_1 = 2; //acessa os atributos
+
+Exemplo em Java:
+
+public class Object_type { //define a classe
+    public int attribute_1;
+    public float attribute_2;
+    object_type(){} //construtor pra poder instanciar o objeto 
+}
+
+Object_type this_is_an_object = New Object_type(); //instancia o objeto 
+this_is_an_object.attribute_1 = 2; //acessa os atributos (deveria ser feito um setter pra isso, mas só pra exemplo)
+
+
+
+
+
+9) Estude e compare as diferen�as entre arrays em Java e em C. Apresente 1 exemplo.
+
+R: bem parecido com a relação de String, em C temos um vetor de algum tipo pré determinado, enquanto em Java temos um objeto que guarda uma cadeira de entradas desse determinado tipo.
+
+exemplo em C: int array[4];
+int array[4]; //declara
+    array[0] = 100; //popula
+    array[1] = 85;
+    array[2] = 88;
+    array[3] = 93;
+int lv_tamanho = size(array); //chama uma função de "sistema" pra pegar o tamanho da array 
+
+exemplo em Java:
+
+int[] array = new int[4]; //instancia um objeto do tipo array de inteiros
+    array[0] = 100; //popula
+    array[1] = 85;
+    array[2] = 88;
+    array[3] = 93;
+
+int lv_tamanho = array.length; //acessa a propriedade length da array pra pegar o tamanho 
+
+
+
+
