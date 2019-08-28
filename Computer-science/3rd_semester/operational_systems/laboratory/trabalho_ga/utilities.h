@@ -1,10 +1,3 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <locale.h>
-
 #define gd_new_line printf("\n");
 #define gd_clear_screen system("@cls||clear");
 
@@ -35,6 +28,6 @@ void show_menu(){
 int get_option(){
     int rv_return;
     printf("\nOpção: ");
-    scanf("%d", &lv_return);
+    scanf("%d", &rv_return);
     return rv_return;
 }
