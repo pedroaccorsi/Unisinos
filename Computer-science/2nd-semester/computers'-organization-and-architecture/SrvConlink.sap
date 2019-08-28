@@ -1,0 +1,16 @@
+
+
+[System]
+Name=I7P
+
+Client=001
+GuiParm=/H/pwdf6942.wdf.sap.corp/S/sapdp01 SNC_PARTNERNAME="p/secude:CN=I7P, O=SAP-AG, C=DE" SNC_QOP=9
+[User]
+Name=
+Language=
+[Function]
+Command=*/SPN/SCNSTFK INSTALLATION=0020294342;SYSTEM=850243216;MESSAGE=012005041000000418952019;
+
+Title=
+
+Type=
