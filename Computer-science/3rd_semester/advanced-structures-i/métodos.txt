@@ -1,0 +1,10 @@
+count_nodes                          OK
+count_internal_nodes                 OK 
+count_leaves                         OK 
+degree                                  1 
+degree_tree                             2
+height                                  3
+height_tree                          OK
+depth3                                  4
+anscestors                           OK
+descendents                          OK

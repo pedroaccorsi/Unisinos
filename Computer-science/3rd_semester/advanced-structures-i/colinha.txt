@@ -1,0 +1,10 @@
+arco: o risquinho que liga dois nós
+grau: quantos filhos tem
+grai da árvore: definido pelo nó que tem o maior número de filhos
+caminho: uma sequência de arcos da raiz até algum nó qualquer
+comprimento do caminho: número de arcos do caminho
+nível: distância entre o nó e a raiz
+ancestral: qualquer nó no caminho entre a raíz e um nó, inclusive ele mesmo
+descendente: qualquer nó pra a partir dos caminhos possíveis de um nó, inclusive ele mesmo
+profundidade: comprimento da raiz até o nó
+altura: maior comprimento do nó até uma folha qualquer
