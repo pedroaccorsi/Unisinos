@@ -1,0 +1,18 @@
+primitivas
+    shell
+        -> interpretador de comandos
+
+processo zumbi
+    -> quando o processo pai não é informado que o processo filho terminou. nesse caso, tudo que é do processo filho vai continuar em memória, mesmo já tendo acabado
+
+pra criar processo novo:
+    -> tu tá num código
+        -> esse código faz um fork() e se clone
+            -> o clone faz um exec() e se substitui 
+                ->voy là, temos um processo novo!
+
+
+inter-process communication (IPC)
+
+comunicação de sistemas distribuidos 
+

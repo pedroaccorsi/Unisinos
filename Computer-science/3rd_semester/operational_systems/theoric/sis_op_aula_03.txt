@@ -1,5 +1,7 @@
 multiprogramação -> vários processos disputando o processador 
 
+PCB -> PROCESS CONTROL BLOCK    
+
 processo
     -> programa em execução
     -> área na memória para código, dados e pilha
@@ -13,3 +15,4 @@ memória
 tudo isso que guarda as informações de processo se chama -> PCB: Process Control Block
 
 PC -> Program Counter -> aponta pra próxima instrução a ser executada 
+

@@ -18,10 +18,10 @@ void show_menu(){
     gd_new_line;gd_new_line;gd_new_line;
     
     printf("<<<< Applications Menu >>>");
-    printf("\n\t1) Web Browser");
-    printf("\n\t2) Text Editor");
-    printf("\n\t3) Terminal ");
-    printf("\n\t4) Finalizar processo");
+    printf("\n\t1) Web Browser               %s", get_browser_status()     );
+    printf("\n\t2) Text Editor               %s", get_text_editor_status() );
+    printf("\n\t3) Terminal                  %s", get_terminal_Status()    );
+    printf("\n\t4) Finalizar processo        %s", get_termination_status() );
     printf("\n\t5) Quit");
 }
 
