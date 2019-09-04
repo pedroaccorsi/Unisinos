@@ -7,12 +7,17 @@ processo
     -> área na memória para código, dados e pilha
 
 memória
-    -> stack -> onde se está do processo, retorno de chamadas recursivas, etc
+    -> stack -> variáveis locais, retorno de chamadas recursivas, etc
     -> heap  -> alocação dinâmnica de memória (pode crescer, mas não infinitamente)
     -> data  -> variáveis globais   
     -> text  -> o código
 
 tudo isso que guarda as informações de processo se chama -> PCB: Process Control Block
-
+    PCB -> /proc/id do processo
+        -> id do processo
+        -> arquivos que estão em uso
+        -> endereço de início e fim do processo
+        -> id do pai 
+        
 PC -> Program Counter -> aponta pra próxima instrução a ser executada 
 

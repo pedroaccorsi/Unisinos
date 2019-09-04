@@ -1,0 +1,19 @@
+Comunicação entre processos
+
+send() e receive()
+
+processamento bloqueante -> o processo que envia com send() fica bloqueado até que o processo destino receba a mensagem
+
+semântica rendez vous -> não usa bufferização, mas é bloqueante
+
+processo pesado -> fork
+
+processo leve -> thread
+
+memória virtual -> como o processo enxerga a memória
+
+uma thread é um processo leve porque não é criado todo o conexto do processo, afinal, o PCB já existe a partir do processo pai. só é criado as coisas específicas da thread, que seriam a pilha e seu próprio program counter
+
+modelo N:1
+    -> se existir, é num sistema embarcado muito específico
+    -> N threads em nível de usuário pra uma thread de kernel
