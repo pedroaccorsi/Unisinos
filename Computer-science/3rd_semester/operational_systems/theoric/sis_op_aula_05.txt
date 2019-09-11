@@ -17,3 +17,7 @@ uma thread é um processo leve porque não é criado todo o conexto do processo,
 modelo N:1
     -> se existir, é num sistema embarcado muito específico
     -> N threads em nível de usuário pra uma thread de kernel
+
+thread
+    -> própria pilha (variáveis locais e retorno de funções)
+    -> 

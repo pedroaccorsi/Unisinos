@@ -1,0 +1,6 @@
+race condition
+    -> quando vários processos (ou threads) consomem o mesmo conjunto de dados concorrentemente, daí o que vai acontecer depende de quem chegar primeiro
+
+seção crítica
+    -> segmento de código no qual um processo realiza a alteração de um recurso compartilhado
+
