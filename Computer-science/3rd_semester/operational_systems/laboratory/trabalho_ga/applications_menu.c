@@ -158,7 +158,6 @@ void webBrowser(){
 
         case -1:
             strcpy(processos[0].codigoStatusExecucao, "failed");
-            printf("deu ruim");
             break;
         
         case 0:
@@ -179,32 +178,34 @@ void webBrowser(){
 
 void textEditor(){
 
-    strcpy(processos[1].codigoStatusExecucao, "running");
-    processos[1].name = TEXT_EDITOR;
-    processos[1].pid  = fork();     
+    int new_pid = fork();     
 
-    switch (processos[1].pid){
+    switch (new_pid){
 
         case -1:
             strcpy(processos[1].codigoStatusExecucao, "failed");
-            printf("deu ruim");
             break;
         
         case 0:
-            
+
             execlp("gedit","gedit --new-window", NULL); 
             break;
+
+        default:
+            strcpy(processos[1].codigoStatusExecucao, "running");
+            processos[1].name = TEXT_EDITOR;
+            processos[1].pid  = new_pid;
+            break;
+
     } 
 
 }
 
 void terminal(){
 
-    strcpy(processos[2].codigoStatusExecucao, "running");
-    processos[2].name = TERMINAL;
-    processos[2].pid  = fork();     
+    int new_pid = fork();     
 
-    switch (processos[2].pid){
+    switch (new_pid){
 
         case -1:
             strcpy(processos[2].codigoStatusExecucao, "failed");
@@ -213,6 +214,12 @@ void terminal(){
         
         case 0:
             execl("/usr/bin/bash", "bash", "-c", "xs", NULL);
+            break;
+
+        case default:
+            strcpy(processos[2].codigoStatusExecucao, "running");
+            processos[2].name = TERMINAL;
+            processos[2].pid  = new_pid;
             break;
     } 
 
