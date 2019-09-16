@@ -6,15 +6,15 @@
 #include <signal.h>
 #include <sys/signal.h>
 #include <stdlib.h>
-
-#define _XOPEN_SOURCE
-
+ 
 //Definições de menu
-#define WEB_BROWSER         1
-#define TEXT_EDITOR         2
-#define TERMINAL            3
-#define FINALIZAR_PROCESSO  4
-#define QUIT                5
+enum menu{
+    WEB_BROWSER         = 1,
+    TEXT_EDITOR         = 2,
+    TERMINAL            = 3,
+    FINALIZAR_PROCESSO  = 4,
+    QUIT                = 5
+};
 
 typedef struct estruturaProcesso {
     int name;
@@ -24,28 +24,12 @@ typedef struct estruturaProcesso {
 
 volatile estruturaProcesso processos[3]={};
 
-void signal_handler();
+int fechou;
 
-//Funções do menu de seleção
-int menuSelecao();
-void executaOpcao(int opcao, estruturaProcesso processo[]);
-void executaOpcaoProcessoFilho(int opcao);
-void executaOpcaoProcessoPai(int opcao);
+#include "func_signatures.h"
 
-//Funcionalidades dos processos filhos
-void webBrowser();
-void textEditor();
-void terminal();
-
-//Funcionalidades do processo pai
-void finalizarProcesso();
-void quit();
-void define_processes();
-void define_sig_handler();
-void sig_handler(int signal);
-void handle_sigint_sigchld();
-volatile int fechou = 999;
 int child;
+
 int main(){
 
     define_processes();
@@ -107,7 +91,7 @@ int menuSelecao(){
     int opcao = 0;
 
     system("clear"); 
-    printf("child -> %d\n", child);
+    printf("fechou -> %d\n", fechou);
 
     printf(" \n<<<< Applications Menu >>>\n");
     printf("\t1) Web Browser             (%s, pid = %d)\n", processos[0].codigoStatusExecucao, processos[0].pid);
@@ -251,7 +235,7 @@ void finalizarProcesso(){
         
         strcpy(processos[0].codigoStatusExecucao, "aborted");
         processos[0].pid = 0;
-        kill(processos[0].pid, SIGTERM);
+        fechou = kill(processos[0].pid, SIGTERM);
         break;
 
     case TEXT_EDITOR:
