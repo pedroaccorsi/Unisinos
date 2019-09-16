@@ -7,6 +7,8 @@
 #include <sys/signal.h>
 #include <stdlib.h>
 
+#define _XOPEN_SOURCE
+
 //Definições de menu
 #define WEB_BROWSER         1
 #define TEXT_EDITOR         2
@@ -20,7 +22,7 @@ typedef struct estruturaProcesso {
     char codigoStatusExecucao[32];
 } estruturaProcesso;
 
-estruturaProcesso processos[3]={};
+volatile estruturaProcesso processos[3]={};
 
 void signal_handler();
 
@@ -41,11 +43,17 @@ void quit();
 void define_processes();
 void define_sig_handler();
 void sig_handler(int signal);
+void handle_sigint_sigchld();
+volatile int fechou = 999;
 
 int main(){
 
     define_processes();
-    define_sig_handler();
+    //define_sig_handler();
+
+    signal(SIGTERM, sig_handler);
+    signal(SIGINT , sig_handler);
+    signal(SIGCHLD, sig_handler);
 
     while(1){
         executaOpcao(menuSelecao(), processos);
@@ -54,14 +62,30 @@ int main(){
 }
 
 void define_sig_handler(){
-    struct sigaction sa;
-    sa.sa_handler = &sig_handler;
-    sa.sa_flags = SA_RESTART;
-    sigfillset(&sa.sa_mask);
+    struct sigaction action;
+	memset(&action, 0, sizeof(struct sigaction));
+	action.sa_handler = sig_handler;
+	sigaction(SIGTERM, &action, NULL);
 }
 
 void sig_handler(int signal){
-    exit(15);
+
+    switch (signal) {
+
+        case SIGCHLD:
+             break;
+        
+        case SIGTERM:
+            if (getpid() == 0){
+                 exit(15);
+            }
+                
+            break;
+
+        case SIGINT:
+             break;
+    }
+
 }
 
 void define_processes(){
@@ -82,7 +106,9 @@ int menuSelecao(){
     int opcao = 0;
 
     system("clear"); 
-    printf(" <<<< Applications Menu >>>\n");
+    printf("a -> %d\n", fechou);
+
+    printf(" \n<<<< Applications Menu >>>\n");
     printf("\t1) Web Browser             (%s, pid = %d)\n", processos[0].codigoStatusExecucao, processos[0].pid);
     printf("\t2) Text Editor             (%s, pid = %d)\n", processos[1].codigoStatusExecucao, processos[1].pid);
     printf("\t3) Terminal                (%s, pid = %d)\n", processos[2].codigoStatusExecucao, processos[2].pid);
@@ -121,15 +147,14 @@ void webBrowser(){
 
     char url[200];
     int status;
+    int new_pid;
     
     printf("Digite a URL que deseja buscar: "); 
     scanf("%s", &url);
 
-    strcpy(processos[0].codigoStatusExecucao, "running");
-    processos[0].name = WEB_BROWSER;
-    processos[0].pid  = fork();     
+    new_pid = fork();     
 
-    switch (processos[0].pid){
+    switch (new_pid){
 
         case -1:
             strcpy(processos[0].codigoStatusExecucao, "failed");
@@ -138,8 +163,16 @@ void webBrowser(){
         
         case 0:
             
-            execlp("firefox","firefox --new-window", url, NULL); 
+            execlp("firefox","firefox --new-window", url, NULL);     
+            exit(13);
             break;
+
+        default:
+            strcpy(processos[0].codigoStatusExecucao, "running");
+            processos[0].name = WEB_BROWSER;
+            processos[0].pid = new_pid;
+            break;
+
     } 
     
 }
