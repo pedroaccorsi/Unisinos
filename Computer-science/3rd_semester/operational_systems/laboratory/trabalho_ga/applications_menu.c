@@ -45,7 +45,7 @@ void define_sig_handler();
 void sig_handler(int signal);
 void handle_sigint_sigchld();
 volatile int fechou = 999;
-
+int child;
 int main(){
 
     define_processes();
@@ -73,6 +73,7 @@ void sig_handler(int signal){
     switch (signal) {
 
         case SIGCHLD:
+            child += 1;
              break;
         
         case SIGTERM:
@@ -106,7 +107,7 @@ int menuSelecao(){
     int opcao = 0;
 
     system("clear"); 
-    printf("a -> %d\n", fechou);
+    printf("child -> %d\n", child);
 
     printf(" \n<<<< Applications Menu >>>\n");
     printf("\t1) Web Browser             (%s, pid = %d)\n", processos[0].codigoStatusExecucao, processos[0].pid);
@@ -216,7 +217,7 @@ void terminal(){
             execl("/usr/bin/bash", "bash", "-c", "xs", NULL);
             break;
 
-        case default:
+        default:
             strcpy(processos[2].codigoStatusExecucao, "running");
             processos[2].name = TERMINAL;
             processos[2].pid  = new_pid;
