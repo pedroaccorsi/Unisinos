@@ -6,6 +6,7 @@
 #include <signal.h>
 #include <sys/signal.h>
 #include <stdlib.h>
+#include <sys/types.h>
  
 //Definições de menu
 enum menu{
@@ -23,8 +24,6 @@ typedef struct estruturaProcesso {
 } estruturaProcesso;
 
 volatile estruturaProcesso processos[3]={};
-
-int fechou;
 
 #include "func_signatures.h"
 
@@ -91,7 +90,6 @@ int menuSelecao(){
     int opcao = 0;
 
     system("clear"); 
-    printf("fechou -> %d\n", fechou);
 
     printf(" \n<<<< Applications Menu >>>\n");
     printf("\t1) Web Browser             (%s, pid = %d)\n", processos[0].codigoStatusExecucao, processos[0].pid);
@@ -198,7 +196,7 @@ void terminal(){
             break;
         
         case 0:
-            execl("/usr/bin/bash", "bash", "-c", "xs", NULL);
+            execl("gnome-terminal", "gnome-terminal", "xs", NULL);
             break;
 
         default:
@@ -234,22 +232,22 @@ void finalizarProcesso(){
     case WEB_BROWSER:
         
         strcpy(processos[0].codigoStatusExecucao, "aborted");
+        kill(processos[0].pid, SIGTERM);
         processos[0].pid = 0;
-        fechou = kill(processos[0].pid, SIGTERM);
         break;
 
     case TEXT_EDITOR:
         
         strcpy(processos[1].codigoStatusExecucao, "aborted");
-        processos[1].pid = 0;
         kill(processos[1].pid, SIGTERM);
+        processos[1].pid = 0;
         break;
 
     case TERMINAL:
         
         strcpy(processos[2].codigoStatusExecucao, "aborted");
-        processos[2].pid = 0;
         kill(processos[2].pid, SIGTERM);
+        processos[2].pid = 0;
         break;
 
     }
