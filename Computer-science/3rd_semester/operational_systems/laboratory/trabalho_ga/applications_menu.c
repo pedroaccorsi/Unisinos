@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 //Definições de menu
 #define WEB_BROWSER         1
@@ -39,7 +40,7 @@ int main(){
 
 int menuSelecao(){
     int opcao = 0;
-
+    system("clear"); 
     printf(" <<<< Applications Menu >>>\n");
     printf("\t1) Web Browser\n");
     printf("\t2) Text Editor\n");
@@ -52,10 +53,12 @@ int menuSelecao(){
 }
 
 void executaOpcao(int opcao, estruturaProcesso processo[]){
-    if ((processo[opcao].pid=fork()) < 0) {
-        perror("Erro no fork!");
-    } else if (processo[opcao].pid == 0) {
-        executaOpcaoProcessoFilho(opcao);
+    if (opcao > 0 && opcao < 4){
+        if ((processo[opcao].pid = fork()) < 0) {
+            perror("Erro no fork!");
+        } else if (processo[opcao].pid == 0) {
+            executaOpcaoProcessoFilho(opcao);
+        } 
     } else {
         //Se é uma funcionalidade executada no processo pai
         if (opcao == FINALIZAR_PROCESSO || opcao == QUIT){
@@ -69,7 +72,7 @@ void executaOpcao(int opcao, estruturaProcesso processo[]){
 
 void executaOpcaoProcessoFilho(int opcao){
     switch (opcao) {
-        case WEB_BROWSER
+        case WEB_BROWSER:
             webBrowser();
         break;
         case TEXT_EDITOR:
@@ -82,10 +85,13 @@ void executaOpcaoProcessoFilho(int opcao){
 }
 
 void webBrowser(){
+
     char url[200];
 
     printf("Digite a URL que deseja buscar: ");
     scanf("%s", &url);
+
+    
     
 }
 
