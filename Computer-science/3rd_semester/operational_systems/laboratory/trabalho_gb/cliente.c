@@ -8,8 +8,6 @@
 #include <unistd.h>
 #include <signal.h>
 
-//FEITO POR JOAO E NICOLAS
-
 //Nome da fila.
 const char* NOME_FILA = "/filaJogoDaVelha";
 
