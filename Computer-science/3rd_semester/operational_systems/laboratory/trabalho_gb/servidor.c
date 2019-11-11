@@ -10,8 +10,6 @@
 #include <sys/types.h>
 #include <stdbool.h>
 
-//FEITO POR NICOLAS E JOAO
-
 //nome dos jogadores
 char player1[40];
 char player2[40];
