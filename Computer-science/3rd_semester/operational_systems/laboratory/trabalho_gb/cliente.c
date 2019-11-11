@@ -53,7 +53,6 @@ void sendMessage() {
 	}
 }
 
-
 void signal_handler() { 
     printf("Recebeu o sinal \n"); 
 }
@@ -95,7 +94,6 @@ int main(int argc, char* argv[]) {
 
 	//Enviar (mq_send)
 	sendMessage();
-
 
 	m.startConection = 0;
 	sleep(1);

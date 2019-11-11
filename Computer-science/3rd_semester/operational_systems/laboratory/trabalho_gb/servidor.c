@@ -58,7 +58,7 @@ int pid;
 ssize_t get_msg_buffer_size(mqd_t queue);
 void print_msg(TJogada* m);
 void validaJogada(TJogada* m);
-void executaJogada(TJogada* m, char jogada, int posicao);
+void executaJogada(TJogada* m, char jogada);
 void print_matriz();
 void startPlayerConnection(TJogada* m);
 void requestAnotherName(TJogada* m);
@@ -71,8 +71,8 @@ void set_collor(char* collor);
 
 int main(void) {
 
-	printf("Servidor, PID: %d \n\n", pid);
 	pid = getpid();
+	printf("Servidor, PID: %d \n\n", pid);
 
 	deal_with_signals();
 	fd = open("log.txt", O_CREAT | O_RDWR, 0770);
@@ -121,47 +121,39 @@ int main(void) {
 		if(((TJogada*) buffer)->startConection == 1) 
 			startPlayerConnection((TJogada*) buffer);
 
-		int valor = ((TJogada*) buffer)->x;
-
-		if (valor == 3123) {
-			printf("Encerrando devido ao valor do produto\n");
-			exit(EXIT_SUCCESS);
-			//Liberar descritor (mq_close)
-			mq_close(queue);
-			printf("Fim!\n");
-		}
 	}
 
 }
 
 
 void validaJogada(TJogada* m) {
-	int posicao = ((int) m->posicao);
-
+ 
 	char nome[40];
 
 	strcpy(nome, m->nome);
+
 	if (playerTurn == 1 && strcmp(nome, player1) == 0) {
-		executaJogada(m, 'X', posicao);
+		executaJogada(m, 'X');
 		return;
 	}
 	if(playerTurn == 2 && strcmp(nome, player2) == 0) {
-		executaJogada(m, 'O', posicao);
+		executaJogada(m, 'O');
 		return;	
 	}
 	createLog(m, JOGADA_INVALIDA);
-	printf("Jogador %s jogou, sendo que não era sua vez; jogada ignorada\n", nome);
-	printf("Jogador %s, é a sua vez de jogar\n", playerTurn == 1 ? player1 : player2);
+	set_collor("yellow");
+	printf("WARNING! Jogador %s jogou, sendo que não era sua vez. \nJogada ignorada\n", nome);
+	set_collor("white");
 }
 
-void executaJogada(TJogada* m, char jogada, int posicao) {
+void executaJogada(TJogada* m, char jogada) {
 
 	char nome[40];
 	int x, y;
 
 	strcpy(nome, m->nome);
 
-	switch(posicao){
+	switch(m->posicao){
 		case 1: x=0; y=0; break;
 		case 2: x=0; y=1; break;
 		case 3: x=0; y=2; break;
@@ -338,11 +330,18 @@ void set_collor(char* collor){
 	}
 }
 
+void sigint_handler() {
+	TJogada* dummy;
+	set_collor("red");
+	printf("ERROR! CTRL + C\n");
+	encerra_jogo("",dummy);
+}
+
 void deal_with_signals() {
 	signal(SIGKILL, signal_handler);
 	signal(SIGQUIT, signal_handler);
 	signal(SIGTERM, signal_handler);
-	signal(SIGINT, signal_handler);
+	signal(SIGINT, sigint_handler);
 }
 
 void signal_handler() 
