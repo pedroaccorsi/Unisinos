@@ -83,18 +83,16 @@ aqui, apenas um processo pode "tomar a ownsership" da mutex e acessar a região 
 pra resolver os deadlocks, uma das 4 condições acima precisa ser falsa. na vida real, a maioria dos OS simplesmente ignora esses casos, torcendo pra que nunca ocorram. de maneira ideal, poderiamos resolver isso permitindo que os processos só aloquem recursos quando todos que forem preciso estiverem liberados, sem manter nada que não está usando ainda. por exemplo no jantar dos filósofos: ninguém pegaria um garfo e ficaria pra sempre aguardando o segundo, ou pega os dois ou não pega nenhum
 
 ## Escalonadores
-time-sharing -> cada processo executa por um tempo quantum. quando ele termina, o processo é preemptado e um novo entra em execução
-real-time -> o processo já define quanto tempo vai ter de processador e esse tempo precisa ser meticulosamente seguido, sem ser modificado. isso garante o funcionamento adequado de sistemas de altissima precisão, como de equipamentos médicos, por exemplo.
+Algoritmos para gerenciar os processos que vão ou não pra CPU.
 
-
-### Throughput
-processos/tempo
-
-### Turnaround
-final execução - chegada na fila
-
-### Starvation
-um processo que nunca é executado. uma causa pode ser ele ter a prioridade baixa demais e nunca ser escalonado para execução.
+- time-sharing -> cada processo executa por um tempo quantum. quando ele termina, o processo é preemptado e um novo entra em execução
+- real-time -> o processo já define quanto tempo vai ter de processador e esse tempo precisa ser meticulosamente seguido, sem ser modificado. isso garante o funcionamento adequado de sistemas de altissima precisão, como de equipamentos médicos, por exemplo.
+- Throughput -> processos/tempo
+- Turnaround ->  final execução - chegada na fila
+- Starvation -> um processo que nunca é executado. uma causa pode ser ele ter a prioridade baixa demais e nunca ser escalonado para execução.
+- longo prazo -> seleciona processos aptos da memória secundária e trás pra principal
+- médio prazo -> seleciona processos da memória principal e faz swap com a memória secundária
+- curto prazo -> seleciona os aptos da memória principal e dá CPU pra eles
 
 ## modo kernel 
 mais seguro porque diversas funções da CPU só podem ser utilizadas caso se esteja no modo kernel, limitando bastante no que instruções no modo usuário podem ou não fazer.
