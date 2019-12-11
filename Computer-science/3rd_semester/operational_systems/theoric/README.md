@@ -140,3 +140,6 @@ Imagina que dois processos de 5 unidades de memória liberaram suas partições,
 - compatação
 	- consiste em pegar espaços livres e reposicioná-los com algoritmos tipo best, worst, first e circular fit.
 	
+
+## Paginação
+Organizar a memória em endereço lógico e físico de tamanho idênticos. Na memória física são chamados de <b>frames</b>, e na lógica de <b>páginas</b>
