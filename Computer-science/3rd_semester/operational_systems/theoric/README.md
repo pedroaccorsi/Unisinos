@@ -97,3 +97,46 @@ Algoritmos para gerenciar os processos que vão ou não pra CPU.
 ## modo kernel 
 mais seguro porque diversas funções da CPU só podem ser utilizadas caso se esteja no modo kernel, limitando bastante no que instruções no modo usuário podem ou não fazer.
 
+## Memória
+
+### Memória Lógica
+Essa é aquela memória que o processo enxerga e "manipula". são endereços de memória fictícios que, "por trás dos panos" estão mapeados para endereços reais, através da MMU, que aí efetivamente são manipulados por hardware.
+
+### Memória Física
+Aqui é a memória real mesmo, os registradores físicos. São "encriptados" pela MMU para que os processos não tenham acesso direto a eles.
+
+## Execução de programas
+
+### Binding
+Atrelação dos endereços físicos aos lógicos que o processo vai utilizar. 
+
+### Carregador
+- absoluto: ao levar o processo pra RAM, define-se um espaço de memória X que, caso esteja alocado, o processo não vai pra RAM e é interrompido, afinal de contas, seu espaço de memória já está em uso.
+
+- realocável: ao levar o processo pra RAM, caso o espaço de memória definido esteja em uso, um novo espaço é definido, para que seja possível levar o processo adiante e executá-lo corretamente
+
+## Alocação Particionada 
+
+### Fixa
+
+É quando a memória RAM é dividida em partições de tamanho estático, e os processos que vão sendo chamados à RAM são alocados nessas partições. Isso delimita a quantidade de processos na RAM a no máximo a quantidade total de partições. Mas, isso pode ocasionar <b>fragmentação interna</b>.
+
+#### Fragmentação Interna
+É quando um processo ocupa uma partição maior que ele mesmo, e daí deixa um espaço livre na memória que na verdade fica inacessível para outros processos. Dessa forma, caso um processo que caiba naquele espaço chegue, ele não pode ser alocado, porque a partição já está em usom, mesmo que haja espaço.
+
+A solução é a alocação dinâmica.
+
+### Dinâmica
+
+Aqui, as partições criadas são de acorod com o tamanho de memória que o processo precisa, sem ter os espaços eventualmente 'extras' que poderia ter-se com partições fixas. Mas, aqui rola um problema chamado <b> fragmentação externa </b>.
+
+#### Fragmentação Externa
+
+Imagina que dois processos de 5 unidades de memória liberaram suas partições, porém existem outas 3 partições entre essas duas. Nesse caso, um novo processo de 8 unidades de memória teoricamente tem espaço para executar, porém as duas partições liberadas são apenas de 5, ou seja, ele acaba por não ser executado.
+
+#### soluções para Framentação Externa
+
+- reunir partições adjacentes de memória
+- compatação
+	- consiste em pegar espaços livres e reposicioná-los com algoritmos tipo best, worst, first e circular fit.
+	
