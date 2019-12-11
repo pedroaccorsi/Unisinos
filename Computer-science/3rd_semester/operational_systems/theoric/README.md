@@ -42,12 +42,15 @@
 
 ## Modelo de threads
 
-###	N:1 -> N threads de usuário para 1 thread de kernel. Nesse contexto, todo a gerência das threads se dá a nível de usuário, no qual a biblioteca sendo utilizada é responsável por escalonar as threads. O problema disso é que se por alguma razão alguma thread for bloqueada, tipo pra fazer I/O, o processo inteiro fica "on hold" sem poder avançar
+###	N:1
+N threads de usuário para 1 thread de kernel. Nesse contexto, todo a gerência das threads se dá a nível de usuário, no qual a biblioteca sendo utilizada é responsável por escalonar as threads. O problema disso é que se por alguma razão alguma thread for bloqueada, tipo pra fazer I/O, o processo inteiro fica "on hold" sem poder avançar
 
 
-###	1:1 -> uma thread de usuário para 1 thread de kernel. Aqui, as threads de usuário podem efetivamente acontecer em paralelo (caso hajam múltiplos processadores), porém requer sempre uma de kernel para cada de usuário, e isso pode sobrecarregar o sistema.
+###	1:1 
+uma thread de usuário para 1 thread de kernel. Aqui, as threads de usuário podem efetivamente acontecer em paralelo (caso hajam múltiplos processadores), porém requer sempre uma de kernel para cada de usuário, e isso pode sobrecarregar o sistema.
 
-###	N:N -> N threads de usuário para N threads de Kernel. Aqui também consegue obter-se o paralelismo (caso hajam múltiplos processadores), porém fica bem difícil de conseguir parametrizar quantas threads quantas threads de kernel para cada thread de usuário.
+###	N:N
+N threads de usuário para N threads de Kernel. Aqui também consegue obter-se o paralelismo (caso hajam múltiplos processadores), porém fica bem difícil de conseguir parametrizar quantas threads quantas threads de kernel para cada thread de usuário.
 
 
 ## Threads:
