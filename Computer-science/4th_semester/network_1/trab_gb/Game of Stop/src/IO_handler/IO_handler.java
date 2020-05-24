@@ -1,4 +1,4 @@
-package Scanner;
+package IO_handler;
 
 import java.io.IOException;
 
