@@ -21,6 +21,6 @@ public class IO_handler_server implements IO_handler {
     }
 
     public void write(String input) throws IOException {
-        this.Scanner_to_server.writeBytes(input);
+        this.Scanner_to_server.writeBytes(input+ this.EOF);
     }
 }
