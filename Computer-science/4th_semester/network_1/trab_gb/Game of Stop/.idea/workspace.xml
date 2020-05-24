@@ -25,6 +25,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -59,53 +60,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="Game of Stop" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="Game of Stop" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Client" />
       <item itemvalue="Application.Server" />
@@ -133,7 +87,7 @@
       <workItem from="1590251866940" duration="5560000" />
       <workItem from="1590258646560" duration="990000" />
       <workItem from="1590265719935" duration="3553000" />
-      <workItem from="1590271747680" duration="9364000" />
+      <workItem from="1590271747680" duration="9675000" />
     </task>
     <servers />
   </component>
@@ -154,35 +108,35 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="260" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590266043572" />
-    <state width="2517" height="451" key="GridCell.Tab.0.bottom" timestamp="1590283307093">
+    <state width="2517" height="451" key="GridCell.Tab.0.bottom" timestamp="1590284951407">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282919" />
-    <state width="2517" height="451" key="GridCell.Tab.0.bottom/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307093" />
-    <state width="2517" height="451" key="GridCell.Tab.0.center" timestamp="1590283307092">
+    <state width="2517" height="451" key="GridCell.Tab.0.bottom/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951407" />
+    <state width="2517" height="451" key="GridCell.Tab.0.center" timestamp="1590284951406">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="320" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282918" />
-    <state width="2517" height="451" key="GridCell.Tab.0.center/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307092" />
-    <state width="2517" height="451" key="GridCell.Tab.0.left" timestamp="1590283307092">
+    <state width="2517" height="451" key="GridCell.Tab.0.center/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951406" />
+    <state width="2517" height="451" key="GridCell.Tab.0.left" timestamp="1590284951406">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="320" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282918" />
-    <state width="2517" height="451" key="GridCell.Tab.0.left/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307092" />
-    <state width="2517" height="451" key="GridCell.Tab.0.right" timestamp="1590283307093">
+    <state width="2517" height="451" key="GridCell.Tab.0.left/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951406" />
+    <state width="2517" height="451" key="GridCell.Tab.0.right" timestamp="1590284951407">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="320" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282919" />
-    <state width="2517" height="451" key="GridCell.Tab.0.right/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307093" />
+    <state width="2517" height="451" key="GridCell.Tab.0.right/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951407" />
     <state x="0" y="103" key="SettingsEditor" timestamp="1590251966296">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="103" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590251966296" />
-    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog" timestamp="1590271755430">
+    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog" timestamp="1590284820642">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="978" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1590251901763" />
-    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590271755430" />
+    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284820642" />
     <state x="856" y="308" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590274730971">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
