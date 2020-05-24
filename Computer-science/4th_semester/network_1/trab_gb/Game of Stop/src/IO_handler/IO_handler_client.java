@@ -8,20 +8,20 @@ import java.net.Socket;
 
 public class IO_handler_client implements IO_handler {
 
-    private BufferedReader   Scanner_from_client;
-    private DataOutputStream Scanner_to_client;
+    private BufferedReader Input;
+    private DataOutputStream Output;
 
     public IO_handler_client(Socket socketConnection) throws IOException {
-        this.Scanner_from_client = new BufferedReader(new InputStreamReader(socketConnection.getInputStream()));
-        this.Scanner_to_client   = new DataOutputStream(socketConnection.getOutputStream());
+        this.Input = new BufferedReader(new InputStreamReader(socketConnection.getInputStream()));
+        this.Output   = new DataOutputStream(socketConnection.getOutputStream());
    }
 
     public String read() throws IOException {
-        return this.Scanner_from_client.readLine();
+        return this.Input.readLine();
     }
 
     public void write(String input) throws IOException {
-        this.Scanner_to_client.writeBytes(input + this.EOF);
+        this.Output.writeBytes(input + this.EOF);
     }
 
 }

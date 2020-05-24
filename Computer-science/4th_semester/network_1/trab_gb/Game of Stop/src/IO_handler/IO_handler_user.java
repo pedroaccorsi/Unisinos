@@ -6,14 +6,14 @@ import java.io.InputStreamReader;
 
 public class IO_handler_user implements IO_handler {
 
-    private BufferedReader Scanner_from_user;
+    private BufferedReader Input;
 
     public IO_handler_user() throws IOException {
-        this.Scanner_from_user = new BufferedReader(new InputStreamReader(System.in));
+        this.Input = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public String read() throws IOException {
-        return this.Scanner_from_user.readLine();
+        return this.Input.readLine();
     }
 
     public void write (String input) throws IOException {}; //null implementation

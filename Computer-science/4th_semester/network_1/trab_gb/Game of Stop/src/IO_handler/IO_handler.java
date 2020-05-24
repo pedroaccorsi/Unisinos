@@ -1,5 +1,7 @@
 package IO_handler;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 
 public interface IO_handler{
