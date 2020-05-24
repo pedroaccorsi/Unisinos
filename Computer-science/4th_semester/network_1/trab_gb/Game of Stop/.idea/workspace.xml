@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f6d2515-9a67-46bf-a025-460647b6fbee" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cJfUAZNO0CHwfYMrehli2S0xOd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Scanner" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Scanner" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="Game of Stop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server" />
+      <module name="Game of Stop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="Game of Stop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="Game of Stop" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="Game of Stop" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Server" />
+      <item itemvalue="Application.Servidor" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Servidor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f6d2515-9a67-46bf-a025-460647b6fbee" name="Default Changelist" comment="" />
+      <created>1590251629602</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590251629602</updated>
+      <workItem from="1590251635294" duration="181000" />
+      <workItem from="1590251866940" duration="5560000" />
+      <workItem from="1590258646560" duration="990000" />
+      <workItem from="1590265719935" duration="3553000" />
+      <workItem from="1590271747680" duration="9364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1450" y="2366" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590256210989">
+      <screen x="924" y="2160" width="1920" height="1034" />
+    </state>
+    <state x="736" y="233" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1590252677731" />
+    <state x="1450" y="2366" key="#com.intellij.execution.impl.EditConfigurationsDialog/924.2160.1920.1034/0.0.2560.1409@924.2160.1920.1034" timestamp="1590256210989" />
+    <state x="1078" y="590" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1590258712629">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="1078" y="590" width="404" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590258712629" />
+    <state x="260" y="266" key="FileChooserDialogImpl" timestamp="1590266043572">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="260" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590266043572" />
+    <state width="2517" height="451" key="GridCell.Tab.0.bottom" timestamp="1590283307093">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state width="1877" height="320" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282919" />
+    <state width="2517" height="451" key="GridCell.Tab.0.bottom/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307093" />
+    <state width="2517" height="451" key="GridCell.Tab.0.center" timestamp="1590283307092">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state width="1877" height="320" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282918" />
+    <state width="2517" height="451" key="GridCell.Tab.0.center/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307092" />
+    <state width="2517" height="451" key="GridCell.Tab.0.left" timestamp="1590283307092">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state width="1877" height="320" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282918" />
+    <state width="2517" height="451" key="GridCell.Tab.0.left/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307092" />
+    <state width="2517" height="451" key="GridCell.Tab.0.right" timestamp="1590283307093">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state width="1877" height="320" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590269282919" />
+    <state width="2517" height="451" key="GridCell.Tab.0.right/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590283307093" />
+    <state x="0" y="103" key="SettingsEditor" timestamp="1590251966296">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="0" y="103" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590251966296" />
+    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog" timestamp="1590271755430">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="978" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1590251901763" />
+    <state x="1304" y="539" key="com.intellij.ide.util.TipDialog/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590271755430" />
+    <state x="856" y="308" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590274730971">
+      <screen x="0" y="0" width="2560" height="1409" />
+    </state>
+    <state x="856" y="308" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590274730971" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1590253454629">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590253454629" />
+  </component>
+</project>
