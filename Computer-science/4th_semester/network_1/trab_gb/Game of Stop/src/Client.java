@@ -11,9 +11,16 @@ public class Client {
         IO_handler IO_user   = new IO_handler_user();
 
         while(true){
-            IO_server.write(IO_user.read());
+            while(IO_server.read().equals("Are you ready?") == false){}
+
+            System.out.println("What's your name?");
+            Player player = new Player(IO_user.read());
+
+            IO_server.write(player.get_name());
             System.out.println(IO_server.read());
+
         }
+
     }
 
 }
