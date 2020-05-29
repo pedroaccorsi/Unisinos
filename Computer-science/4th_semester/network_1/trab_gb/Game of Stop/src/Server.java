@@ -10,22 +10,47 @@ public class Server {
         ArrayList<Client_handler> Clients = new ArrayList<Client_handler>();
         ServerSocket socketReceive        = new ServerSocket(Connection.PORT);
 
+        System.out.println("Starting server...");
+
         //infinitely waits for all players to join
-        for(int i=1; i<=Connection.MAX_CLIENTS; i++){
+        while(true){
+
             Socket socket = null;
             while( socket == null){ socket = socketReceive.accept(); }
-            Clients.add( new Client_handler(socket) );
-            if(i<Connection.MAX_CLIENTS){
-                Clients.get(0).write("Waiting for other players to join...");
+
+            int current_clients = Clients.size();
+
+            //many clients still to join
+            if( current_clients < Connection.MAX_CLIENTS - 1){
+                Clients.add( new Client_handler(socket) );
+                Clients.get(current_clients).write(Messages.waiting);
+                System.out.println("One player just joined");
+                continue;
             }
+
+            //last client to join
+            else if(current_clients < Connection.MAX_CLIENTS){
+                Clients.add( new Client_handler(socket) );
+                System.out.println("One player just joined");
+
+            //max clients already joined
+            } else {
+                Clients.add( new Client_handler(socket) );
+                Clients.get(current_clients).write(Messages.sorry);
+                Clients.remove(current_clients);
+                System.out.println("One player was kicked due to server overload");
+                continue;
+            }
+
+            for (Client_handler client : Clients) {
+                client.write(Messages.ready);
+            }
+
+            //start game probably in new thread
         }
 
-        //ask if all players are ready
-        for (Client_handler client : Clients) {
-            client.write(Messages.ready);
-        }
 
-        //start game?
+
 
 
     }

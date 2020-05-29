@@ -15,23 +15,28 @@ public class Client {
 
         input = IO_server.read();
 
+        //max player already playing
         if(input.equals(Messages.sorry)){
             System.out.println(input);
             return;
         }
 
+        //waiting for other players
         if(input.equals(Messages.waiting)){
             System.out.println(Messages.waiting);
             input = IO_server.read();
         }
 
+        //ask if player is ready to play
         System.out.println(Messages.ready);
 
         while (input.equals(Messages.yes)               == false &&
                input.equals(Messages.yes.toLowerCase()) == false)
             input = IO_user.read();
 
+        //init player object with his/her name
         Player player = new Player( IO_user.read("Type in your name: ") );
+
 
     }
 
