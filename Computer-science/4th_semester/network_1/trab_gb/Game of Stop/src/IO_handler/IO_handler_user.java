@@ -16,5 +16,10 @@ public class IO_handler_user implements IO_handler {
         return this.Input.readLine();
     }
 
+    public String read(String output) throws IOException {
+        System.out.println(output);
+        return this.Input.readLine();
+    }
+
     public void write (String input) throws IOException {}; //null implementation
 }

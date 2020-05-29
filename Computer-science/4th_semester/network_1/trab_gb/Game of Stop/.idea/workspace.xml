@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f6d2515-9a67-46bf-a025-460647b6fbee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Constants/Messages.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerListenerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/Client_handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/Client_handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_user.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/IO_handler/IO_handler_user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client_handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client_handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Constants/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Constants/Connection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO_handler/IO_handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO_handler/IO_handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO_handler/IO_handler_client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO_handler/IO_handler_client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO_handler/IO_handler_server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO_handler/IO_handler_server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IO_handler/IO_handler_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IO_handler/IO_handler_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -111,6 +117,8 @@
       <workItem from="1590335492373" duration="4574000" />
       <workItem from="1590351862509" duration="6268000" />
       <workItem from="1590365970001" duration="2118000" />
+      <workItem from="1590695724127" duration="535000" />
+      <workItem from="1590705436371" duration="8593000" />
     </task>
     <servers />
   </component>
@@ -134,26 +142,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="260" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590337301264" />
-    <state width="1877" height="251" key="GridCell.Tab.0.bottom" timestamp="1590368245770">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="2517" height="356" key="GridCell.Tab.0.bottom" timestamp="1590716791971">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="251" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590368245770" />
-    <state width="2517" height="451" key="GridCell.Tab.0.bottom/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951407" />
-    <state width="1877" height="251" key="GridCell.Tab.0.center" timestamp="1590368245769">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="2517" height="356" key="GridCell.Tab.0.bottom/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590716791971" />
+    <state width="2517" height="356" key="GridCell.Tab.0.center" timestamp="1590716791971">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="251" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590368245769" />
-    <state width="2517" height="451" key="GridCell.Tab.0.center/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951406" />
-    <state width="1877" height="251" key="GridCell.Tab.0.left" timestamp="1590368245769">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="2517" height="356" key="GridCell.Tab.0.center/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590716791971" />
+    <state width="2517" height="356" key="GridCell.Tab.0.left" timestamp="1590716791971">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="251" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590368245769" />
-    <state width="2517" height="451" key="GridCell.Tab.0.left/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951406" />
-    <state width="1877" height="251" key="GridCell.Tab.0.right" timestamp="1590368245770">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="2517" height="356" key="GridCell.Tab.0.left/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590716791971" />
+    <state width="2517" height="356" key="GridCell.Tab.0.right" timestamp="1590716791971">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state width="1877" height="251" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590368245770" />
-    <state width="2517" height="451" key="GridCell.Tab.0.right/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284951407" />
+    <state width="2517" height="356" key="GridCell.Tab.0.right/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590716791971" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom" timestamp="1590358157227">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -174,18 +182,19 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="103" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590251966296" />
-    <state x="978" y="402" key="com.intellij.ide.util.TipDialog" timestamp="1590366279988">
+    <state x="978" y="402" key="com.intellij.ide.util.TipDialog" timestamp="1590705437398">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="978" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1590366279988" />
+    <state x="978" y="402" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1590705437398" />
     <state x="1304" y="539" key="com.intellij.ide.util.TipDialog/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590284820642" />
     <state x="856" y="308" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590274730971">
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="856" y="308" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590274730971" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1590366390290">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="821" y="326" key="run.anything.popup" timestamp="1590716655027">
+      <screen x="0" y="0" width="2560" height="1409" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590366390290" />
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590706821364" />
+    <state x="821" y="326" key="run.anything.popup/924.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1590716655027" />
   </component>
 </project>

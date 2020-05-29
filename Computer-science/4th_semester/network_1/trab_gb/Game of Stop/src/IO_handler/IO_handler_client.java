@@ -20,7 +20,12 @@ public class IO_handler_client implements IO_handler {
         return this.Input.readLine();
     }
 
-    public void write(String input) throws IOException {
+    public String read(String input) throws IOException {
+        System.out.println(input);
+        return this.Input.readLine();
+    }
+
+        public void write(String input) throws IOException {
         this.Output.writeBytes(input + this.EOF);
     }
 
