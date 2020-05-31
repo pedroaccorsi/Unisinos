@@ -1,16 +1,18 @@
 import IO_handler.*;
+import Listener.*;
+
 import java.io.IOException;
 import java.net.*;
 
 public class Client_handler {
 
-    private Socket     socket   ;
-    private IO_handler client_io;
-    private Player     player   ;
+    private IO_handler client_io        ;
+    private Player     player           ;
+    private Listener   serverListener   ;
 
     public Client_handler(Socket socket) throws IOException {
-        this.socket     = socket;
-        this.client_io  = new IO_handler_client(socket);
+        this.client_io      = new IO_handler_client(socket);
+        this.serverListener = new ClientListener(this.client_io);
     }
 
     public void write(String input){
@@ -30,6 +32,18 @@ public class Client_handler {
         return null;
     }
 
+    public void waitForInput(){
+        this.serverListener.waitForInput();
+    }
+
+    public boolean hasInput(){
+        return this.serverListener.hasInput();
+    }
+
+    public void listen(){
+        this.serverListener.listen();
+    }
+    
     public void set_player(String name){
         this.player = new Player(name);
     }

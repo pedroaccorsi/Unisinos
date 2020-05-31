@@ -2,28 +2,68 @@
 
 @startuml 
 
-actor player_1
-actor player_2
+actor player
+entity client
+entity server
 
+player -> client : start game
+
+activate client 
+
+client -> server : connection request
+
+activate server
+
+alt server is overloaded
+    server --> client : try again later
+    client -> player : finish
+else server is not overloaded
+    server --> client : waiting for other players
+else server is now overloaded
+    server --> client : are you ready?
+end
+
+client -> player : what's your name?
+player --> client : name
+client -> server : yes + name
+
+@enduml
+
+```
+
+```puml
+
+@startuml 
+
+actor player
+entity client
 entity server
 entity game
-=== prepare game === 
-server   -> server : while not \n2 players
-player_1 -> server
-player_2 -> server
-server -> player_1 : are you ready?
-return  yes
-server -> player_2 : are you ready?
-return  yes
 
+server -> game   : get leter and \ncattegories
+server -> client : letter and    \ncattegories
 
-=== start game === 
-server -> game : get_game()
-return  A...Z + \nlist of cattegories
+loop through all catteogires
 
-server -> player_1 : A...Z + \nlist of cattegories
-server -> player_2 : A...Z + \nlist of cattegories
+    client -> client : anything on buffer?
+    alt nothing on buffer from server
+        client -> player : get answer
+        return answer
+    else someone said STOP
+        client -> player : no more answers!
+        client -> server : <answers - 1> + player
+    else was last cattegory
+        client -> server : <answers> + STOP + player
+    end
 
+end
+
+alt stop?
+    server -> client : STOP
+    client -> player : STOP
+end
+
+server -> game : <answers + player>
 
 
 @enduml

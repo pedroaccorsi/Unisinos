@@ -1,17 +1,19 @@
 import java.net.*;
 import Constants.*;
 import IO_handler.*;
+import Listener.Listener;
+import Listener.ServerListener;
 
 
 public class Client {
 
     public static void main(String argv[]) throws Exception {
 
-        Socket socketClient    = new Socket(Connection.LOCAL_HOST, Connection.PORT);
-        ServerListenerHandler serverListenerHandlerHandler = new ServerListenerHandler(socketClient);
-        IO_handler IO_server   = new IO_handler_server(socketClient);
-        IO_handler IO_user     = new IO_handler_user();
-        String     input       = "";
+        Socket socketClient     = new Socket(Connection.LOCAL_HOST, Connection.PORT);
+        IO_handler IO_server    = new IO_handler_server(socketClient);
+        Listener serverListener = new ServerListener(IO_server);
+        IO_handler IO_user      = new IO_handler_user();
+        String     input        = "";
 
         input = IO_server.read();
 
@@ -35,7 +37,13 @@ public class Client {
             input = IO_user.read();
 
         //init player object with his/her name
-        Player player = new Player( IO_user.read("Type in your name: ") );
+        //Player player = new Player( IO_user.read("Type in your name: ") );
+
+        IO_server.write("to pronto rapaiz");
+
+        input = IO_server.read();
+
+        System.out.println(input);
 
 
     }
