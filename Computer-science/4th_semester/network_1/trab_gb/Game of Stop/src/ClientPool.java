@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class ClientPool implements Runnable{
 
     private ArrayList<Client_handler> Clients;
+
     public ClientPool(ArrayList<Client_handler> arr){
         this.Clients = arr;
     }
-
 
     @Override
     public void run() {

@@ -1,0 +1,27 @@
+' TAM skin parameters
+skinparam{
+    StartColor Black
+    ActivityEndColor Black
+    StateEndColor Black
+    ActivityBackgroundColor White
+    ActivityBorderColor Black
+    ActivityDiamondBackgroundColor White
+    ActivityDiamondBorderColor Black
+    BarColor Black
+    InterfaceBackgroundColor White
+    InterfaceBorderColor Black
+    ClassBackgroundColor White
+    ClassArrowColor Black
+    ClassBorderColor Black
+    ClassHeaderBackgroundColor LightGray
+    PackageBackgroundColor LightGray
+    ArrowColor Black
+    ActorBorderColor Black
+    ActorBackgroundColor White
+    ParticipantBackgroundColor White
+    ParticipantBorderColor Black
+    LifeLineBorderColor Black
+    LifeLineBackgroundColor LightGray
+    SequenceLifeLineBorderColor Black
+    SequenceLifeLineBackgroundColor LightGray
+}

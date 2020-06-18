@@ -1,0 +1,4 @@
+
+!unquoted function activity($text) 
+  !return ":" + $text + ";"
+!endfunction

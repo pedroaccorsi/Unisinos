@@ -1,0 +1,83 @@
+'https://material.io/design/color/#tools-for-picking-colors
+
+'Relationship functions
+!unquoted function creates($to, $direction = "") 
+  !return "." + $direction + ".> " + $to + ":creates"
+!endfunction
+!unquoted function implements($to, $direction = "") 
+  !return "." + $direction + ".|> " + $to + ":implements"
+!endfunction
+!unquoted function uses($to, $direction = "", $n = "" , $m = "") 
+  !if ( $n == "" && $m == "" )
+    !return "-" + $direction + "-> " + $to + ":uses"
+  !else
+    !if ( $m == "" )
+      !return '"' + $n + '"' + "-" + $direction + "-> " + $to + ":uses"
+    !else
+      !if ( $n == "" )
+        !return "-" + $direction + "-> " + '"' + $m + '"' + $to + ":uses"
+      !else
+        !return '"' + $n + '"' + "-" + $direction + "-> " + '"' + $m + '"' + $to + ":uses"
+      !endif
+    !endif
+  !endif
+!unquoted function extends($to, $direction = "") 
+  !return "-" + $direction + "-|> " + $to + ":extends"
+!endfunction
+!unquoted function listens($to, $direction = "") 
+  !return "-" + $direction + "-> " + $to + ":listen events of"
+!endfunction
+!unquoted function composes($to, $direction = "") 
+  !return "-" + $direction + "-* " + $to + ":composes"
+!endfunction
+!unquoted function depends($to, $direction = "")
+ !return "." + $direction + ".> " + $to + ":depends"
+!endfunction
+
+'Default entities functions
+!unquoted function global_class($name) 
+  !return "class " + $name + " <<(C, #80CBC4)>> "
+!endfunction
+!unquoted function global_interface($name) 
+  !return "interface " + $name + " <<(I, #81D4FA)>> "
+!endfunction
+!unquoted function local_class($name) 
+  !return "class " + $name + " <<(C, #80CBC4) Local>> "
+!endfunction
+!unquoted function local_interface($name) 
+  !return "interface " + $name + " <<(I, #81D4FA) Local>> "
+!endfunction
+!unquoted function global_singleton($name) 
+  !return "class " + $name + " <<(S, #26A69A)Singleton>> "
+!endfunction
+!unquoted function local_singleton($name) 
+  !return "class " + $name + " <<(S, #26A69A)Local Singleton>> "
+!endfunction
+!unquoted function global_factory($name) 
+  !return "class " + $name + " <<(C, #26A69A)Factory>> "
+!endfunction
+!unquoted function local_factory($name) 
+  !return "class " + $name + " <<(C, #26A69A)Local Factory>> "
+!endfunction
+!unquoted function global_assembler($name) 
+  !return "class " + $name + " <<(C, #26A69A)Assembler>> "
+!endfunction
+!unquoted function local_assembler($name) 
+  !return "class " + $name + " <<(C, #26A69A)Local Assembler>> "
+!endfunction
+!unquoted procedure framework($name) 
+  class $name <<(F,#B39DDB) Framework>>
+  hide $name members
+!endfunction
+!unquoted procedure payroll_function($name) 
+  class $name <<(P,#FFF59D) Payroll Function>>
+  hide $name members
+!endfunction
+!unquoted procedure form($name) 
+  class $name <<(F,#FFF59D) Form>>
+  hide $name members
+!endfunction
+!unquoted procedure function_module($name) 
+  class $name <<(F,#B39DDB) Function Module>>
+  hide $name members
+!endfunction

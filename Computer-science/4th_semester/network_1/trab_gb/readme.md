@@ -8,4 +8,11 @@ Laura Brayer
 
 ## Game of Stop
 
-![architecture](diagramas/architecture.png)
+### Design on client side
+![architecture](images/client_side.png)
+
+### Design on communication interface server<->client
+![architecture](images/comunication_interface.png)
+
+### Design on Server side 
+![architecture](images/server_side.png)
