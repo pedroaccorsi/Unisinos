@@ -1,7 +1,12 @@
 package Listener;
 
 public interface Listener {
-    public void listen();
-    public void waitForInput();
-    public boolean hasInput();
+    public void listenString();
+    public void waitForInputString();
+    public boolean hasInputString();
+
+    public void listenObject();
+    public void waitForInputObject();
+    public boolean hasInputObject();
+
 }

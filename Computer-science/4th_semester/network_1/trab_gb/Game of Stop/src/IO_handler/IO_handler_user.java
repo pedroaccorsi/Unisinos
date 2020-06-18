@@ -16,10 +16,27 @@ public class IO_handler_user implements IO_handler {
         return this.Input.readLine();
     }
 
-    public String read(String output) throws IOException {
-        System.out.println(output);
+    @Override
+    public Object read_obj(String text) throws IOException {
+        return null;
+    }
+
+    @Override
+    public Object read_obj() throws IOException {
+        return null;
+    }
+
+    public String read(String text) throws IOException {
+        System.out.println(text);
         return this.Input.readLine();
     }
 
-    public void write (String input) throws IOException {}; //null implementation
+    public void write (String output) throws IOException {}
+
+    @Override
+    public void write(Object message) throws IOException {
+
+    }
+
+    ; //null implementation
 }

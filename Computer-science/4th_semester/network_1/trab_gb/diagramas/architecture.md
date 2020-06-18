@@ -31,7 +31,6 @@ server -> player_2 :A...Z  + cattegory
 return answer
 server --> game : answer + player
 server -> server : waits for answer 
-
 end
 
 ...

@@ -1,9 +1,9 @@
 import java.net.*;
+import java.util.ArrayList;
+
+import Listener.*;
 import Constants.*;
 import IO_handler.*;
-import Listener.Listener;
-import Listener.ServerListener;
-
 
 public class Client {
 
@@ -36,15 +36,37 @@ public class Client {
                input.equals(Messages.yes.toLowerCase()) == false)
             input = IO_user.read();
 
-        //init player object with his/her name
-        //Player player = new Player( IO_user.read("Type in your name: ") );
+        //Let server know we're ready
+        IO_server.write(input);
 
-        IO_server.write("to pronto rapaiz");
+        //Get game from server
+        GameOfStop Game = (GameOfStop) (IO_server.read_obj());
+        Game.setName(
+            IO_user.read("Type in your name: ")
+        );
 
-        input = IO_server.read();
+        System.out.println("OK! Bora jogar! Responda no padrão 'Categoria: Resposta'");
+        System.out.println(Game.toString());
 
-        System.out.println(input);
+        serverListener.listenString();
 
+        while(serverListener.hasInputString() == false && Game.isStop() == false){
+            Game.AddNewAnswer(
+                IO_user.read()
+            );
+        }
+
+        //Send final answers
+        if(Game.isStop() == true){
+            System.out.println("Sending your answers!");
+        }else{
+            System.out.println("Someone hit STOP! Sending your answers!");
+        }
+
+        IO_server.write(Game.getAnswers());
+        IO_server.write(Game.getAnswers());
+
+        while(true){}
 
     }
 
