@@ -12,7 +12,7 @@ Laura Brayer
 ![architecture](images/client_side.png)
 
 ### Design on communication interface server<->client
-![architecture](images/comunication_interface.png)
+![architecture](images/comunication_interface.PNG)
 
 ### Design on Server side 
 ![architecture](images/server_side.png)
