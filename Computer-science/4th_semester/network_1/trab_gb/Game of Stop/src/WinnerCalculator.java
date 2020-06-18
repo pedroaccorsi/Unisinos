@@ -1,74 +1,50 @@
-import Constants.Connection;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class WinnerCalculator {
-    private ArrayList<String> answers_per_player;
-    private ArrayList<String> players = new ArrayList<String>();
-    private ArrayList<Integer> points = new ArrayList<Integer>();
-    private Integer num_players = Connection.MAX_CLIENTS;;
+    private ArrayList<Player> players;
+    private ArrayList<String> all_categories;
     private String winner = "";
 
+    public WinnerCalculator(ArrayList<Player> players){
+        this.all_categories = new GameOfStop().getCategories();
+        this.players = players;
+    }
 
-    public WinnerCalculator(ArrayList<String> answers_per_player){
-        this.answers_per_player = answers_per_player;
-        for( String str : this.answers_per_player ){
-            String[] arr2 = str.split(":");
-            this.players.add(arr2[1]);
+    private void setWinner(){
+        int num_players = this.players.size();
+        int max = Integer.MIN_VALUE;
+
+        for(Player player : this.players){
+            for(String category : this.all_categories){
+                boolean same_answer = false;
+                String ans_player = player.getValueByCategory(category);
+                if(ans_player.isBlank() || ans_player.equals("null") || ans_player == null)
+                    continue;
+                for(Player player1 : this.players){
+                    if(player.get_name().equals(player1.get_name()) || same_answer)
+                        continue;
+                    String ans_player1 = player1.getValueByCategory(category);
+
+                    same_answer = ans_player.equals(ans_player1);
+                }
+                player.addPoints( same_answer ? 5 : 10);
+            }
+        }
+
+
+        for(Player player : this.players){
+            //System.out.println("player: " + player.get_name() + ", points: " + player.getPoints());
+            if(player.getPoints() > max){
+                max = player.getPoints();
+                this.winner = player.get_name();
+            }
         }
     }
 
-    public String setWinner(){
-
-        for(int i=0; i<Connection.MAX_CLIENTS; i++){
-
-            int pontos = 0;
-
-            String[] arr = this.answers_per_player.get(i).split(";");
-            int num_of_answers = (arr.length-1);
-
-            if(num_of_answers<=0)
-                continue;
-
-            for(int j=1; j<=num_of_answers; j++){
-
-                boolean achei_igual = false;
-                String curr_category = arr[j].split(":")[0];
-                String curr_answer   = arr[j].split(":")[1];
-
-                for(int k=0; k<Connection.MAX_CLIENTS && achei_igual == false; k++){
-                    if(i==k)
-                        continue;
-
-                    String[] arr2 = this.answers_per_player.get(k).split(";");
-
-                    int num_of_answers2 = (arr2.length-1);
-
-                    if(num_of_answers2<=0)
-                        continue;
-
-                    for(int w=1; w<=num_of_answers2 && achei_igual == false; w++) {
-                        String comparing_category = arr2[w].split(":")[0];
-                        String comparing_answer = arr2[w].split(":")[1];
-
-                        achei_igual = curr_category.equals(comparing_category) && curr_answer.equals(comparing_answer);
-                    }
-
-                }
-                pontos += achei_igual ? 10 : 5;
-            }
-            points.add(pontos);
-        }
-
-        int size = points.size();
-        System.out.println("");
-
-        for(int i=0; i<size; i++){
-            System.out.println("player: " + answers_per_player.get(i).split(";")[0].split(":")[1] + ", points: " + points.get(i) );
-        }
-
-        return "";
+    public String getWinner(){
+        if(this.winner.isBlank())
+            setWinner();
+        return this.winner;
     }
 
 
