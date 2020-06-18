@@ -28,6 +28,7 @@ public class GameOfStop implements Serializable {
 
     public void setName(String player){
         this.player = player;
+        this.Answers += "player:" + player + ";";
     }
 
     public ArrayList<String> getCategories(){
@@ -39,23 +40,31 @@ public class GameOfStop implements Serializable {
     }
 
     public void AddNewAnswer(String answer){
-        this.Answers += answer + ";";
+        String[] arr = answer.trim().split(":");
+        this.Answers += arr[0].trim() + ":" + arr[1].trim() + ";";
     }
 
     public Boolean isStop(){
         String[] arr = this.Answers.split(";");
-        return arr.length == this.Categories.size();
+        return arr.length == this.Categories.size() + 1;
     }
 
     public String getAnswers(){
         return this.Answers;
     }
 
-    @Override
-    public String toString(){
+    public String getRules(){
         String rt = "";
         rt += "Letter: " + letter + "\n";
         rt += "Cattegories: " + this.Categories.toString();
+        return rt;
+    }
+
+    @Override
+    public String toString(){
+        String rt= "";
+        rt += "Player: "  + this.player;
+        rt += "Answers: " + this.Answers;
         return rt;
     }
 

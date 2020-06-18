@@ -1,6 +1,7 @@
 import Constants.Messages;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +23,7 @@ public class ClientPool implements Runnable{
         start_listening_string();
         wait_for_stop();
         read_answers();
-        print_answers();
+        set_winner();
         while (true) { }
     }
 
@@ -81,9 +82,7 @@ public class ClientPool implements Runnable{
             for (Client_handler client : this.Clients) {
                 if (client.clientListener.hasInputString() == true) {
                     try {
-                        String peguei = client.client_io.read();
-                        System.out.println(peguei);
-                        client.setAnswers(peguei);
+                        client.setAnswers(client.client_io.read());
                         client.stop = true;
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -107,9 +106,7 @@ public class ClientPool implements Runnable{
         for( Client_handler client : this.Clients){
             if(client.stop == false){
                 try {
-                    String peguei = client.client_io.read();
-                    System.out.println(peguei);
-                    client.setAnswers(peguei);
+                    client.setAnswers(client.client_io.read());
                     client.stop = true;
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -118,12 +115,18 @@ public class ClientPool implements Runnable{
         }
     }
 
-    private void print_answers(){
+    private void set_winner(){
+        ArrayList<String> answers_per_player = new ArrayList<String>();
+
         for( Client_handler client : this.Clients){
             if(client.getAnswers() != "") {
-                System.out.println(client.getAnswers());
+                //System.out.println(client.getAnswers());
+                answers_per_player.add(client.getAnswers());
             }
         }
+
+        WinnerCalculator wincalc = new WinnerCalculator(answers_per_player);
+        wincalc.setWinner();
     }
 
 
