@@ -21,7 +21,6 @@ public class ClientPool implements Runnable{
         wait_for_stop();
         read_answers();
         set_winner();
-        while (true) { }
     }
 
     private void ask_if_ready(){
@@ -136,6 +135,5 @@ public class ClientPool implements Runnable{
         }
 
     }
-
 
 }

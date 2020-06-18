@@ -66,7 +66,7 @@ public class Client {
         System.out.println("Calculating winner...");
         System.out.println(IO_server.read());
 
-        while(true){}
+        socketClient.close();
     }
 
 }
