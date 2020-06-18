@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ClientPool implements Runnable{
 
     private ArrayList<Client_handler> Clients;
+    private GameOfStop Game;
 
     public ClientPool(ArrayList<Client_handler> arr){
         this.Clients = arr;
@@ -62,10 +63,10 @@ public class ClientPool implements Runnable{
     }
 
     private void send_game(){
-        GameOfStop game = new GameOfStop();
+        this.Game = new GameOfStop();
         for(Client_handler client : this.Clients){
             try {
-                client.client_io.write(game);
+                client.client_io.write(Game);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -103,7 +104,6 @@ public class ClientPool implements Runnable{
             if(client.stop == false){
                 try {
                     client.setAnswers(client.client_io.read());
-                    client.stop = true;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -121,13 +121,13 @@ public class ClientPool implements Runnable{
             }
         }
 
-        String winner = new WinnerCalculator(players).getWinner();
+        String winner = new WinnerCalculator(players, this.Game.getLetter()).getWinner();
 
         try {
             for(Client_handler client : this.Clients){
-                System.out.println(client.getName() + " - " + client.getAnswers());
-                if(client.getName().equals(winner))
-                    client.client_io.write("You win!!!");
+                System.out.println("Player: " +client.getName() + ", Stop: " + client.stop +  (client.getName().equals(winner)? ", Winner!" : ", Loser!" ));
+                if(client.stop==true)
+                    client.client_io.write( client.getName().equals(winner) ? "You win!!!" : "You lose!!!");
                 client.client_io.write( client.getName().equals(winner) ? "You win!!!" : "You lose!!!");
             }
         } catch (IOException e) {

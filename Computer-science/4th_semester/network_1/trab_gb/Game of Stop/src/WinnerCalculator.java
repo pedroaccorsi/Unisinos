@@ -3,11 +3,13 @@ import java.util.ArrayList;
 public class WinnerCalculator {
     private ArrayList<Player> players;
     private ArrayList<String> all_categories;
+    private Character letter;
     private String winner = "";
 
-    public WinnerCalculator(ArrayList<Player> players){
+    public WinnerCalculator(ArrayList<Player> players, char letter){
         this.all_categories = new GameOfStop().getCategories();
         this.players = players;
+        this.letter = letter;
     }
 
     private void setWinner(){
@@ -18,7 +20,7 @@ public class WinnerCalculator {
             for(String category : this.all_categories){
                 boolean same_answer = false;
                 String ans_player = player.getValueByCategory(category);
-                if(ans_player.isBlank() || ans_player.equals("null") || ans_player == null)
+                if(ans_player.isBlank() || ans_player.equals("null") || ans_player == null || ans_player.startsWith(""+this.letter) == false)
                     continue;
                 for(Player player1 : this.players){
                     if(player.get_name().equals(player1.get_name()) || same_answer)
