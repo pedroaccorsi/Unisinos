@@ -13,14 +13,6 @@ public class Client {
         IO_handler IO_user      = new IO_handler_user();
         String     input        = "";
 
-
-        //ArrayList<Player> players = new ArrayList<Player>();
-        //for(int i=0; i<4; i++){
-        //    players.add( new Player(IO_user.read()) );
-        //}
-        //WinnerCalculator WinCalc = new WinnerCalculator(players);
-        //System.out.println("O vencedor é: "+ WinCalc.getWinner());
-
         input = IO_server.read();
 
         //max player already playing
