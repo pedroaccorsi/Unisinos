@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f6d2515-9a67-46bf-a025-460647b6fbee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ClientPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Listener/ClientListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Listener/Listener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game of Stop/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game of Stop/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client_handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client_handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerListenerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Listener/ServerListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../diagramas/readme2.md" beforeDir="false" afterPath="$PROJECT_DIR$/../diagramas/readme2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +153,8 @@
       <workItem from="1592582452105" duration="721000" />
       <workItem from="1592788620777" duration="210000" />
       <workItem from="1593106001360" duration="588000" />
+      <workItem from="1594151564036" duration="64000" />
+      <workItem from="1594151682435" duration="43000" />
     </task>
     <servers />
   </component>
@@ -304,6 +296,10 @@
       <screen x="0" y="0" width="2560" height="1409" />
     </state>
     <state x="1090" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1023.2160.1920.1034/0.0.2560.1409@0.0.2560.1409" timestamp="1592440909832" />
+    <state x="0" y="145" key="new project wizard" timestamp="1594151707516">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="0" y="145" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1594151707516" />
     <state x="755" y="272" key="refactoring.ChangeSignatureDialog" timestamp="1592354242866">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
